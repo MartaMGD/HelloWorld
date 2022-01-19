@@ -55,7 +55,7 @@
   <p><?php echo "<br>";
       echo '<b>3. Escribir un programa que nos diga el nombre del mes según el número de mes y además nos diga cuántos días tiene ese mes.</b>'; ?></p>
   <?php
-  echo 'El mes es: ' . $month = 6 . ", ";
+  echo 'El mes es: ' . $month = 4 . ", ";
 
   switch ($month) {
     case 1:
@@ -96,6 +96,16 @@
       break;
   }
 
+  echo "<br>"; 
+  
+  if ($month == 4 || $month == 6 || $month == 9 || $month == 11) {
+    echo 'El mes tiene 30 días';
+  } else if ($month == 1 || $month == 3 || $month == 5 || $month == 7 || $month == 8 || $month == 10 || $month == 12) {
+    echo 'El mes tiene 31 días';
+  } else {
+    echo 'El mes tiene 28 días'; 
+  }
+
   ?>
 
   <p><?php echo "<br>";
@@ -113,7 +123,7 @@
 
   if ($finalMark >= 90) {
     echo 'La nota es un sobresaliente';
-  } else if ($finalMark < 90 && $finalMark >= 50) {
+  } else if ($finalMark >= 50) {
     echo 'La nota es un aprobado';
   } else {
     echo 'Estás suspenso';
@@ -124,7 +134,32 @@
   <p><?php echo "<br>";
       echo '<b>5. Escribir un programa que dada una temperatura en Celsius o Fahrenheit la convierta a la otra escala.</b>'; ?></p>
   <?php
+  echo '<span> Calculadora de Celsius a Fahrenheit </span> <br>';
+  $number1 = 2;
+  echo 'El número introducido es ' . $number1;
+  echo '<br>';
 
+  function celsiusConverter ($number1)
+  {
+    $number1 * (180/100) + 32;
+  }
+
+  $celsiusToFahrenheit = celsiusConverter($number1);
+  echo 'El resultado es: ' . $celsiusToFahrenheit;
+
+  echo '<br>';
+
+  echo '<br> <span> Calculadora de Fahrenheit a Celsius </span> <br>';
+  $number2 = 6;
+  echo 'El número introducido es ' . $number2;
+  echo '<br>'; 
+
+  function fahrenheitConverter ($number2) {
+    $number2 - 32 * (100/180);
+  }
+
+  $fahrenheitToCelsius = fahrenheitConverter($number2);
+  echo 'El resultado es: ' . $fahrenheitToCelsius;
   ?>
 
 
